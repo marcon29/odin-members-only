@@ -1,15 +1,18 @@
 class PostsController < ApplicationController
+  before_action :require_login
+  skip_before_action :require_login, except: [:index]
+  helper_method :current_user, :logged_in?
   
   def index
     @posts = Post.all.order(id: :desc)
     @post = Post.new
-    @user = User.first        # need to switch to current_user
+    @user = current_user
   end
 
   def create
     @post = Post.new(post_params)
     @posts = Post.all.order(id: :desc)
-    @user = User.first        # need to switch to current_user
+    @user = current_user
     
     if @post.save
       redirect_to posts_path
@@ -17,14 +20,13 @@ class PostsController < ApplicationController
       render :index
     end
   end
-
-  def edit
-  end
-
+ 
   def update
+    # keep for editing a post in same form later
   end
 
   def destroy
+    # keep for deleting a post later
   end
 
   private

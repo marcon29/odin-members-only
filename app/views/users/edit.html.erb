@@ -1,2 +1,5 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1><%= "Edit #{current_user.first_name} #{current_user.last_name}" %></h1>
+
+<section id="feed">
+    <%= render "user_form", user: @user %>
+</section>
