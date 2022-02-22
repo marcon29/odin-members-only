@@ -1,0 +1,13 @@
+<section id="feed-form">
+    <%= form_with model: post do |f| %>
+        <section class="feed-post-form">
+            <%= tag.p "#{user.first_name} #{user.last_name}", class: "post-user-form" %>
+            <%= f.hidden_field :user_id, value: user.id %>
+            <%= f.text_field :body, class: "post-content-form" %>
+            <%= f.submit %>
+        </section>
+    <% end %>
+</section>
+
+<hr>
+
