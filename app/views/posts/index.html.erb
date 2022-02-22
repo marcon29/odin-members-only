@@ -1,2 +1,8 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<section id="feed">
+    <% @posts.each do |p| %>
+        <section class="feed-post">
+            <%= tag.p "#{p.user.first_name} #{p.user.last_name}", class: "post-user" %>
+            <%= tag.p p.body, class: "post-content" %>
+        </section>
+    <% end %>
+</section>

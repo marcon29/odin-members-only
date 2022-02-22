@@ -11,6 +11,30 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <section id="header-top">
+          <h1 id="header-HL"><%= link_to "Members Only Twitter Mock", root_path %></h1>
+        </section>
+        <section id="header-bottom">
+        <nav id="main-nav">
+          <ul>
+            <li><%= link_to "New User", new_user_path %></li>
+            <li><%= link_to "Sign In", "#" %></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    
+      
+    
+    <main>
+      <%= yield %>
+    </main>
+    
+    <footer>
+        <p><a href="https://www.markstabler.com" target="_blank">Created by Mark Stabler</a></p>
+        <p class="display-horiz fine-print">© Stabler Writing Services, LLC</p>
+        <p class="display-horiz fine-print"><a href="#" target="_blank">Source Code</a></p>
+    </footer>
   </body>
 </html>
